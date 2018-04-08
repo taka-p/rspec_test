@@ -1,6 +1,10 @@
 FactoryBot.define do
+  sequence :inq_title do |i|
+    "title #{i}"
+  end
+
   factory :blog do
-    title "MyString"
+    title { generate :inq_title }
     word "MyText"
     writer "MyString"
   end
